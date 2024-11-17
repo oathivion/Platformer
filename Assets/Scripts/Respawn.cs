@@ -1,37 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public Transform respawnPoint;
-    private GameObject currentPlayer;
-    // Start is called before the first frame update
+    public Vector3 respawnPoint; // The point where the player will respawn
+
     void Start()
     {
-        RespawnPlayer();
+        // Optionally, set the initial respawn point at the start of the game
+        transform.position = respawnPoint;
     }
 
     public void RespawnPlayer()
     {
-        if (currentPlayer == null)
-        {
-            currentPlayer = Instantiate(playerPrefab,respawnPoint.position, Quaternion.identity);
-        }
-    }
-
-    public void DestroyPlayer()
-    {
-        if (currentPlayer != null)
-        {
-            Destroy(currentPlayer);
-            Invoke(nameof(RespawnPlayer), 1f);
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Set the player position to the respawn point
+        transform.position = respawnPoint;
     }
 }
