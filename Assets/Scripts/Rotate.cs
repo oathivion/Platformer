@@ -6,7 +6,7 @@ public class Rotate : MonoBehaviour
 
     void Update()
     {
-        // Rotate the object continuously around the Z-axis (2D rotation)
+        //the actual rotation
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 }

@@ -6,13 +6,11 @@ public class Respawn : MonoBehaviour
 
     void Start()
     {
-        // Optionally, set the initial respawn point at the start of the game
         transform.position = respawnPoint;
     }
 
     public void RespawnPlayer()
     {
-        // Set the player position to the respawn point
         transform.position = respawnPoint;
     }
 }
